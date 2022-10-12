@@ -19,7 +19,7 @@ function ShoppingList({ items }) {
       </div>
       <ul className="Items">
         {items.map((item) => (
-          (item.category === selectedCategory || selectedCategory === "All") ? <Item key={item.id} name={item.name} category={item.category} /> : <></>
+          (item.category === selectedCategory || selectedCategory === "All") ? <Item key={item.id} name={item.name} category={item.category} /> : null
         ))}
       </ul>
     </div>
