@@ -1,21 +1,17 @@
 import React, { useState } from "react";
 import Item from "./Item";
+import Filter from './Filter'
 
 function ShoppingList({ items }) {
   const [selectedCategory, setCategory] = useState("All")
   const filterCategory = (e) => {
     setCategory(e.target.value)
-    // console.log(e.target.value)
+    
   }
   return (
     <div className="ShoppingList">
       <div className="Filter">
-        <select name="filter" onChange={(e) => filterCategory(e)}>
-          <option value="All">Filter by category</option>
-          <option value="Produce">Produce</option>
-          <option value="Dairy">Dairy</option>
-          <option value="Dessert">Dessert</option>
-        </select>
+      <Filter filterCategory={filterCategory}/>
       </div>
       <ul className="Items">
         {items.map((item) => (
